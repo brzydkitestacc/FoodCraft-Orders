@@ -15,7 +15,7 @@ import ru.foodCraft.orders_service.Service.OrdersService;
 public class OrderController {
     private final OrdersService ordService;
 
-    @PostMapping
-    public ResponseEntity
+    //@PostMapping
+    //public ResponseEntity
 
 }
