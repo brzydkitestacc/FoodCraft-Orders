@@ -1,8 +1,7 @@
 package ru.foodCraft.orders_service.Model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -11,6 +10,10 @@ import java.util.List;
 @Data
 @RequiredArgsConstructor
 @Table(name="orders")
+@Builder
+@AllArgsConstructor
+//@NoArgsConstructor
+
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +25,12 @@ public class Order {
     @Column(name = "chief_id")
     private long chiefId;
 
-    //@Column(name = "m")
-    //private List<Meal> meals;
+    @OneToMany(mappedBy = "orderId")
+    private List<Meal> meals;
 
     @Column(name = "total_price")
     private double totalPrice;
+
 
 
 }

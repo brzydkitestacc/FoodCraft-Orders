@@ -1,6 +1,23 @@
 package ru.foodCraft.orders_service.RequestResponse;
 
-public class OrderRequest {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import ru.foodCraft.orders_service.Model.Meal;
 
-//TODO РЕКВЕСТЫ С КЛИЕНТА ВЫТАЩИТЬ ЧТО-ТО ХЗ ЧО
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class OrderRequest {
+    private long customerId;
+    private long chiefId;
+    private double totalPrice;
+    private List<Meal> meals;
+
+
 }

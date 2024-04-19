@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Data
 @RequiredArgsConstructor
-@Table(name="orders")
+@Table(name="meals")
 public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,10 @@ public class Meal {
 
     @Column(name = "meal_name")
     private String mealName;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id",referencedColumnName = "id")
+    private Order orderId;
 
     @Column(name = "meal_nutritional")
     private double mealNutritional;
